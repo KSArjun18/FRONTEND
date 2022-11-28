@@ -9,7 +9,7 @@ function Createaccount() {
     const navigate = useNavigate();
     const formik = useFormik({
         initialValues: {
-            naem: "",
+            name: "",
             username: "",
             password: "",
             ConfirmPassword: ""
@@ -33,6 +33,7 @@ function Createaccount() {
             return error
         },
         onSubmit: async (values) => {
+            delete values.ConfirmPassword;
             await axios.post(`${config.api}/register/create`, values)
             navigate("/portal")
             alert("User Created Successfully")

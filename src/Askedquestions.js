@@ -9,7 +9,7 @@ function Askedquestions() {
   const params = useParams();
 
   const [details, setDetails] = useState([])
-  const [loading,setLoading] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     async function fetchData() {
@@ -44,54 +44,61 @@ function Askedquestions() {
         <div className='row'>
           <div className='col-md-12 mt-5 mb-4 text-center'>
             <h3>QUESTIONS ASKED BY YOU</h3>
-          </div> 
+          </div>
           {
-            loading ? <div class="d-flex justify-content-center" style={{ marginTop: "200px" }}>
-            <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-        </div>
+            details ? <div className='p-4 text-center card' style={{color:"red"}}>No Questions asked by User</div>
             :
             <div>
             {
-              details.map((detail, index) => {
-                return <div className='row'>
-                  <div className='col-lg-2 p-3'>
-                    <h6 className='btn btn-warning btn-sm' style={{ color: "black", fontWeight: "bolder", fontFamily: "inherit" }}>QUESTION {index + 1}</h6>
-                  </div>
-                  <div className='col-lg-8'>
-
-                  </div>
-                  <div className='col-lg-2 p-3'>
-                    <h6 className='btn btn-danger btn-sm' style={{ color: "black", fontWeight: "bolder", fontFamily: "inherit" }}>TOTAL VIEWS : {detail.Question.views} </h6>
-                  </div>
-                  <div className='col-lg-12 p-2 mb-3 card' style={{ color: "black" }}>
-                
-                      <div style={{ padding: "10px" }}><b>Subject :</b> <div>{detail.Question.subject}</div></div>
-                      <div style={{ padding: "10px" }}><b>Details :</b> <div>{detail.Question.details}</div></div>
-                    
-                  </div>
-                  <div className='col-lg-2 p-3'>
-                    <h6 className='btn btn-warning btn-sm' style={{ color: "black", fontWeight: "bolder", fontFamily: "inherit" }}>COMMENTS</h6>
-                  </div>
-                  <div className='col-lg-12 p-2 mb-3 card' style={{ color: "black" }}>
-                    {
-                      detail.Comments.map((com, index) => {
-                        return <div style={{ padding: "10px" }}><b>Comment {index + 1} :</b> <div>{com}</div></div>
-                      })
-                    }
-                  </div>
-                  <div style={{ border: "1px solid gray" }} className='mt-4 mb-4'></div>
+              loading ? <div class="d-flex justify-content-center" style={{ marginTop: "200px" }}>
+                <div class="spinner-border" role="status">
+                  <span class="visually-hidden">Loading...</span>
                 </div>
-              })
-            }
+              </div>
+                :
+                <div>
+                  {
+                    details.map((detail, index) => {
+                      return <div className='row'>
+                        <div className='col-lg-2 p-3'>
+                          <h6 className='btn btn-warning btn-sm' style={{ color: "black", fontWeight: "bolder", fontFamily: "inherit" }}>QUESTION {index + 1}</h6>
+                        </div>
+                        <div className='col-lg-8'>
 
+                        </div>
+                        <div className='col-lg-2 p-3'>
+                          <h6 className='btn btn-danger btn-sm' style={{ color: "black", fontWeight: "bolder", fontFamily: "inherit" }}>TOTAL VIEWS : {detail.Question.views} </h6>
+                        </div>
+                        <div className='col-lg-12 p-2 mb-3 card' style={{ color: "black" }}>
+
+                          <div style={{ padding: "10px" }}><b>Subject :</b> <div>{detail.Question.subject}</div></div>
+                          <div style={{ padding: "10px" }}><b>Details :</b> <div>{detail.Question.details}</div></div>
+
+                        </div>
+                        <div className='col-lg-2 p-3'>
+                          <h6 className='btn btn-warning btn-sm' style={{ color: "black", fontWeight: "bolder", fontFamily: "inherit" }}>COMMENTS</h6>
+                        </div>
+                        <div className='col-lg-12 p-2 mb-3 card' style={{ color: "black" }}>
+                          {
+                            detail.Comments.map((com, index) => {
+                              return <div style={{ padding: "10px" }}><b>Comment {index + 1} :</b> <div>{com}</div></div>
+                            })
+                          }
+                        </div>
+                        <div style={{ border: "1px solid gray" }} className='mt-4 mb-4'></div>
+                      </div>
+                    })
+                  }
+
+                </div>
+            }
           </div>
           }
           
+
         </div>
       </div>
-      <div style={{ height: "450px" }}></div>
+      <div style={{ height: "520px" }}></div>
     </div>
   )
 }

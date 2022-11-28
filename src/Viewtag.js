@@ -43,7 +43,7 @@ function Viewtag() {
 
                     </div>
                     <div className='col-md-4 mt-4 text-end'>
-                        <Link to={`/portal/home-page/view-question/${window.localStorage.getItem("userId")}`} className='btn btn-info'><i class="fa-solid fa-square-plus mr-2"></i>Add another question</Link>
+                        <Link to={`/portal/home-page/ask-question/${window.localStorage.getItem("userId")}`} className='btn btn-info'><i class="fa-solid fa-square-plus mr-2"></i>Add another question</Link>
                     </div>
                 </div>
                 <div className='row'>

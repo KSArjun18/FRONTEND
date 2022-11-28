@@ -60,7 +60,7 @@ function Viewquestion() {
                 setPosting(false)
                 alert("Comment Added Successfully")
                 formik.resetForm()
-                navigate("/portal/home-page")
+                navigate(`/portal/home-page/comments/view-comments/${params.qId}`)
             } catch (error) {
                 console.log(error);
             }
@@ -72,7 +72,7 @@ function Viewquestion() {
             <div className='container'>
                 <div className='row'>
                     <div className='col-md-2 mt-4'>
-                        <Link to={"/portal/home-page"} className='btn btn-dark'><i class="fa-solid fa-circle-arrow-left mr-2"></i>Back</Link>
+                        <Link to={`/portal/home-page/comments/view-comments/${params.qId}`} className='btn btn-dark'><i class="fa-solid fa-circle-arrow-left mr-2"></i>Back</Link>
                     </div>
                 </div>
                 {

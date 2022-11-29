@@ -10,6 +10,7 @@ function Askedquestions() {
 
   const [details, setDetails] = useState([])
   const [loading, setLoading] = useState(false)
+  const [dataAvailable , setdataAvailable] = useState(false)
 
   useEffect(() => {
     async function fetchData() {
@@ -28,7 +29,14 @@ function Askedquestions() {
 
   return (
     <div style={{ backgroundColor: "rgb(45,44,46)", color: "whitesmoke" }}>
-      <div className='container'>
+      {
+        loading ? <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status" style={{marginTop:"300px"}}>
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+        :
+        <div className='container'>
 
         <div className='row'>
           <div className='col-md-2 mt-4'>
@@ -46,7 +54,7 @@ function Askedquestions() {
             <h3>QUESTIONS ASKED BY YOU</h3>
           </div>
           {
-            details ? <div className='p-4 text-center card' style={{color:"red"}}>No Questions asked by User</div>
+            details == 0 ? <div className='p-4 text-center card' style={{color:"red"}}>No Questions asked by User</div>
             :
             <div>
             {
@@ -98,7 +106,8 @@ function Askedquestions() {
 
         </div>
       </div>
-      <div style={{ height: "520px" }}></div>
+      }
+      <div style={{ height: "500px" }}></div>
     </div>
   )
 }

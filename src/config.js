@@ -1,4 +1,4 @@
 export const config = {
-    // api : "http://localhost:3000"
-    api : "https://stackoverflow-server.onrender.com"
+    api : "https://lazy-cyan-underclothes.cyclic.app"
+    // api : "https://stackoverflow-server.onrender.com"
 }

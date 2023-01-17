@@ -58,7 +58,7 @@ function Login() {
 
                                 <div class="row">
                                     <div class="col-lg-6 d-none d-lg-block text-center mt-5 p-2">
-                                    <img src='https://content.presspage.com/uploads/2658/c800_logo-stackoverflow-square.jpg?98978' style={{width:"460px"}}/>
+                                        <img src='https://content.presspage.com/uploads/2658/c800_logo-stackoverflow-square.jpg?98978' style={{ width: "460px" }} />
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="p-5">
@@ -114,13 +114,16 @@ function Login() {
                                                         <input type="submit" onClick={() => { setError() }} class="btn btn-primary btn-user btn-block" value={"Login"} />
                                                 }
                                                 <hr />
-                                                <Link to={"create-account"} class="btn btn-google btn-user btn-block ">
-                                                    <i class="fa-solid fa-user-plus mr-3"></i> Create Account
-                                                </Link>
-                                                <Link to={"forgot-password"} class="btn btn-facebook btn-user btn-block ">
-                                                    <i class="fa-solid fa-unlock mr-3"></i> Forgot Password
-                                                </Link>
                                             </form>
+                                            <button style={{ borderRadius: "50px" }} onClick={() => formik.setValues({ username: "dhanushvarmanj66@gmail.com", password: "login" })} class="btn btn-secondary btn-user btn-block ">
+                                                Guest User
+                                            </button>
+                                            <Link to={"create-account"} class="btn btn-google btn-user btn-block " style={{ borderRadius: "50px" }}>
+                                                <i class="fa-solid fa-user-plus mr-3"></i> Create Account
+                                            </Link>
+                                            <Link style={{ borderRadius: "50px" }} to={"forgot-password"} class="btn btn-facebook btn-user btn-block ">
+                                                <i class="fa-solid fa-unlock mr-3"></i> Forgot Password
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
